@@ -50,14 +50,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         var imgName = [String]()
         imgName.append(currentTime + ".png")
-        
+        print("上传中...");
         self.pictureViewModel.upLoadImageRequest(urlString: basicURL, params: ["iOSTime": currentTime], data: imageData, name: imgName, successCallBlock: { resultValue in
             switch "\(resultValue)" {
             case "200":
-                break
-            case "201":
+                print("上传完成...");
                 break
             case "500":
+                print("上传失败...");
                 break
             default:
                 break
